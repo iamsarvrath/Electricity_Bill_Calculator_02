@@ -1,0 +1,207 @@
+:root {
+    color-scheme: light;
+    --ink: #17211b;
+    --muted: #6d776f;
+    --line: #e2e8e3;
+    --accent: #237a4b;
+    --accent-dark: #185d38;
+    --soft: #f1f7f2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #f7faf8;
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.page-shell {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 32px 16px 20px;
+}
+
+.calculator-card {
+    width: min(100%, 520px);
+    padding: clamp(24px, 5vw, 42px);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(27, 56, 38, 0.08);
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+h1 {
+    max-width: 390px;
+    margin: 10px 0 12px;
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.intro p {
+    margin: 0 0 30px;
+}
+
+.bill-form label,
+.rates h2 {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    font-weight: 750;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 0 16px;
+    border: 1px solid #ccd8ce;
+    border-radius: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-row:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(35, 122, 75, 0.12);
+}
+
+input {
+    width: 100%;
+    padding: 14px 0;
+    border: 0;
+    outline: 0;
+    color: var(--ink);
+    background: transparent;
+    font: inherit;
+    font-size: 1.05rem;
+}
+
+.input-row span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+button {
+    width: 100%;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--accent);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 750;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button span {
+    margin-left: 6px;
+    font-size: 1.2rem;
+}
+
+.result {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--soft);
+}
+
+.result-label,
+.result-units {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.result strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--accent-dark);
+    font-size: 2rem;
+}
+
+.result-units {
+    padding-bottom: 4px;
+}
+
+.message {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.error {
+    color: #a23d32;
+    background: #fff1ef;
+}
+
+.rates {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+}
+
+.rates h2 {
+    margin-bottom: 14px;
+}
+
+.rate-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.rate-row strong {
+    color: var(--ink);
+    font-weight: 650;
+}
+
+footer {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+@media (max-width: 420px) {
+    .page-shell {
+        padding: 16px 12px;
+    }
+
+    .calculator-card {
+        border-radius: 14px;
+    }
+}
